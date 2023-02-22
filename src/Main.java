@@ -92,10 +92,10 @@ public class Main {
         int past = current - 200;
         int future = current + 100;
         while ( year < future) {
-            if ( year > past || year < future) {
-                year = year + 79;
+            if ( year > past ) {
                 System.out.println("Комета прилетит в " + year + " году");
             }
+            year = year + 79;
         }
     }
 }
