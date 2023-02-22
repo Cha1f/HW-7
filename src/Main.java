@@ -30,9 +30,9 @@ public class Main {
         int fertility = 17;
         int mortality = 8;
         int years = 0;
-        int birthRate = population / 1000 * fertility;  //коэффициент рождаемости
-        int deathRate = population / 1000 * mortality;  //коэффициент смертности
         while (years < 12) {
+            int birthRate = population / 1000 * fertility;  //коэффициент рождаемости
+            int deathRate = population / 1000 * mortality;  //коэффициент смертности
             population = population + birthRate - deathRate;
             years++;
             System.out.println("Год " + years + ", численность населения составляет " + population + " человек");
@@ -91,9 +91,11 @@ public class Main {
         int current = 2023;
         int past = current - 200;
         int future = current + 100;
-        while ( year > past || year < future) {
-            System.out.println("Комета прилетит в " + year + " году");
-            year = year + 79;
+        while ( year < future) {
+            if ( year > past || year < future) {
+                year = year + 79;
+                System.out.println("Комета прилетит в " + year + " году");
+            }
         }
     }
 }
